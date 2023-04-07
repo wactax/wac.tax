@@ -25,7 +25,7 @@ for p in $(fd "^.git$" \
 
     cmd="cd $to && git add -u && git commit -m'$msg' ; git pull && git push"
     echo $cmd
-    bash -c "$cmd" &
+    bash -c "$cmd"
   fi
 
 done
