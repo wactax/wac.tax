@@ -1,1 +1,1 @@
-{"type":"module","dependencies":{"@w5/loader":"^0.0.3","@w5/ossput": "^0.0.5"}}
+{"type":"module","dependencies":{"@w5/loader":"^0.0.3","@w5/ossput": "^0.0.8"}}
