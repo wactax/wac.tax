@@ -1,3 +1,4 @@
+git.fetch.sh
 *.conf/
 .DS_Store
 bun.lockb
