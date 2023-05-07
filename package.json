@@ -2,5 +2,6 @@
   "type": "module",
   "dependencies": {
     "@w5/loader": "^0.0.3"
-  }
+  },
+  "packageManager": "yarn@3.5.1"
 }
