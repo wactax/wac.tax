@@ -4,7 +4,9 @@ pnpm-lock.yaml
 node_modules/
 *.map
 **/.git/
-**/lib
+**/lib/**/*.js
+**/lib/**/*.css
+**/lib/**/*.map
 
 ops/conf/chasquid/certs
 ops/os/os/usr/bin
