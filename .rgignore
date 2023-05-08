@@ -1,4 +1,5 @@
 !*
+.git/
 .pnpm-store/
 ops/conf/chasquid/certs
 ops/os/os/usr/bin
