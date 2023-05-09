@@ -7,7 +7,7 @@ node_modules/
 **/lib/**/*.js
 **/lib/**/*.css
 **/lib/**/*.map
-
+target/
 ops/conf/chasquid/certs
 ops/os/os/usr/bin
 api/src/**/*
