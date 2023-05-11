@@ -35,7 +35,6 @@ clone node
 clone ops os
 clone ops soft
 clone ops docker
-clone ru
 clone styl
 clone ui
 clone site
