@@ -9,7 +9,7 @@ for p in $(fd package.json \
   -E .git \
   -E node_modules \
   -aIHt f); do
-  if [[ ! $(echo $p | grep -E '/npm/') ]]; then
+  if [[ $p != *"\/napi-rs\/"* && $p != *"\/npm\/"* ]]; then
     cmd="cd $(dirname $p) && ncu -u && ni"
     echo -e "$GREEN> $cmd$NC"
     bash -c "$cmd"
