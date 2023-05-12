@@ -9,7 +9,7 @@ for p in $(fd package.json \
   -E .git \
   -E node_modules \
   -aIHt f); do
-  if [ ! grep -q -E '/api/' $p ]; then
+  if grep -r -q -E '/api/' $p; then
     cmd="cd $(dirname $p) && ncu -u && ni"
     echo -e "$GREEN> $cmd$NC"
     bash -c "$cmd"
