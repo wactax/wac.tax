@@ -15,6 +15,7 @@ update = (fp)=>
   run = (cmd)=>
     $"sh -c 'cd #{dir} && #{cmd.split(' ')}'"
 
+  await $"sh -c 'cd #{dir} && git add -u && git commit -m. || true'"
   await run 'git pull origin main'
   await run 'ncu -u'
   await run 'ni'
