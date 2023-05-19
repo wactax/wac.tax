@@ -9,13 +9,17 @@ ROOT = uridir import.meta
 
 
 update = (fp)=>
-  cd dirname(fp)
-  await $'git pull'
-  await $'ncu -u'
-  await $'ni'
-  await $'git add -u'
-  await $'sh -c \'git commit -m"update package.json" || true\''
-  await $'git push'
+  dir = dirname(fp)
+
+  run = (cmd)=>
+    $"sh -c 'cd #{dir} && #{cmd.split(' ')}'"
+
+  await run 'git pull'
+  await run 'ncu -u'
+  await run 'ni'
+  await run 'git add -u'
+  await run 'git commit -m"update package.json" || true'
+  await run 'git push'
   return
 
 for await fp from walk(
