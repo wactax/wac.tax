@@ -6,6 +6,18 @@
   zx/globals:
 
 ROOT = uridir import.meta
+
+
+update = (fp)=>
+  cd dirname(fp)
+  await $'git pull'
+  await $'ncu -u'
+  await $'ni'
+  await $'git add -u'
+  await $'sh -c \'git commit -m"update package.json" || true\''
+  await $'git push'
+  return
+
 for await fp from walk(
   ROOT
   (i)=>
@@ -22,10 +34,4 @@ for await fp from walk(
     ].includes(name)
 )
   if basename(fp) == 'package.json'
-    cd dirname(fp)
-    await $'git pull'
-    await $'ncu -u'
-    await $'ni'
-    await $'git add -u'
-    await $'sh -c \'git commit -m"update package.json" || true\''
-    await $'git push'
+    await update fp
