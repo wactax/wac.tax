@@ -15,7 +15,7 @@ update = (fp)=>
   run = (cmd)=>
     $"sh -c 'cd #{dir} && #{cmd.split(' ')}'"
 
-  await run 'git pull'
+  await run 'git pull origin main'
   await run 'ncu -u'
   await run 'ni'
   await run 'git add -u'
