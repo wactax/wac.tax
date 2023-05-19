@@ -4,6 +4,7 @@
   @w5/uridir
   path > sep basename dirname
   zx/globals:
+  @w5/pool > Pool
 
 ROOT = uridir import.meta
 
@@ -18,9 +19,11 @@ update = (fp)=>
   await run 'ncu -u'
   await run 'ni'
   await run 'git add -u'
-  await run 'git commit -m"update package.json" || true'
+  await $"sh -c 'cd #{dir} && git commit -m update\\ package.json || true'"
   await run 'git push'
   return
+
+POOL = Pool 8
 
 for await fp from walk(
   ROOT
@@ -38,4 +41,6 @@ for await fp from walk(
     ].includes(name)
 )
   if basename(fp) == 'package.json'
-    await update fp
+    POOL update,fp
+
+await POOL.done

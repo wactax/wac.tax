@@ -4,6 +4,9 @@ dependencies:
   '@w5/loader':
     specifier: ^0.0.3
     version: 0.0.3
+  '@w5/pool':
+    specifier: ^0.0.1
+    version: 0.0.1
   '@w5/uridir':
     specifier: ^0.0.1
     version: 0.0.1
@@ -93,6 +96,10 @@ packages:
       '@w5/coffee_plus': 0.0.12
       '@w5/jsext': 0.0.1
       coffeescript: 2.7.0
+    dev: false
+
+  /@w5/pool@0.0.1:
+    resolution: {integrity: sha512-MIKgocZeh02gSVaI8EJNNX0jucwRhFODwNJNVfL8hDowdBN+vISsWzMFqkfYTHX4w7aFKGKbQSl5lxeAIuBGcQ==}
     dev: false
 
   /@w5/uridir@0.0.1:
