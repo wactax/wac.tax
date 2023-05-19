@@ -23,5 +23,9 @@ for await fp from walk(
 )
   if basename(fp) == 'package.json'
     cd dirname(fp)
-    await $"ncu -u"
-    await $"ni"
+    await $'git pull'
+    await $'ncu -u'
+    await $'ni'
+    await $'git add -u'
+    await $'sh -c \'git commit -m"update package.json" || true\''
+    await $'git push'
