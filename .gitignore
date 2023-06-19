@@ -18,3 +18,4 @@ pkg/
 .env
 lib/
 web/
+rsrv/
