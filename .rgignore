@@ -1,0 +1,15 @@
+!*
+.yarn/
+.pnpm-store/
+pnpm-lock.yaml
+node_modules/
+*.map
+**/.git/
+**/lib/**/*.js
+**/lib/**/*.css
+**/lib/**/*.map
+target/
+ops/conf/chasquid/certs
+ops/os/os/usr/bin
+api/src/**/*
+ui/src/**/*
